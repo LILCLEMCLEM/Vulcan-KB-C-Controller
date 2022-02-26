@@ -1,0 +1,16 @@
+C:\Users\User\source\repos\Vulcan Project\Vulcan Project\bin\Debug\Vulcan Project.exe.config
+C:\Users\User\source\repos\Vulcan Project\Vulcan Project\bin\Debug\Vulcan Project.exe
+C:\Users\User\source\repos\Vulcan Project\Vulcan Project\bin\Debug\Vulcan Project.pdb
+C:\Users\User\source\repos\Vulcan Project\Vulcan Project\obj\Debug\Vulcan_Project.Form1.resources
+C:\Users\User\source\repos\Vulcan Project\Vulcan Project\obj\Debug\Vulcan_Project.Properties.Resources.resources
+C:\Users\User\source\repos\Vulcan Project\Vulcan Project\obj\Debug\Vulcan Project.csproj.GenerateResource.cache
+C:\Users\User\source\repos\Vulcan Project\Vulcan Project\obj\Debug\Vulcan Project.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Vulcan Project\Vulcan Project\obj\Debug\Vulcan Project.exe
+C:\Users\User\source\repos\Vulcan Project\Vulcan Project\obj\Debug\Vulcan Project.pdb
+C:\Users\User\source\repos\Vulcan Project\Vulcan Project\bin\Debug\HidSharp.dll
+C:\Users\User\source\repos\Vulcan Project\Vulcan Project\bin\Debug\Vulcan.NET.dll
+C:\Users\User\source\repos\Vulcan Project\Vulcan Project\bin\Debug\HidSharp.pdb
+C:\Users\User\source\repos\Vulcan Project\Vulcan Project\bin\Debug\HidSharp.xml
+C:\Users\User\source\repos\Vulcan Project\Vulcan Project\bin\Debug\Vulcan.NET.xml
+C:\Users\User\source\repos\Vulcan Project\Vulcan Project\obj\Debug\Vulcan Project.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Vulcan Project\Vulcan Project\obj\Debug\Vulcan Project.csproj.CopyComplete
