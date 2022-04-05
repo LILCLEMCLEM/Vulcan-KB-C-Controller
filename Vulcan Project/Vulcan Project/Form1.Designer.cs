@@ -72,10 +72,10 @@ namespace Vulcan_Project
             this.labelRed = new System.Windows.Forms.Label();
             this.trackBarRed = new System.Windows.Forms.TrackBar();
             this.comboBoxLEDPattern = new System.Windows.Forms.ComboBox();
-            this.backgroundWorkerRainbowWaves = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorkerRainbowColor = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerRandomKey = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerRandomcolor = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorkerMatrix = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorkerRainbowWave = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.PannelRandomKeys.SuspendLayout();
@@ -571,10 +571,10 @@ namespace Vulcan_Project
             this.comboBoxLEDPattern.TabIndex = 0;
             this.comboBoxLEDPattern.SelectedIndexChanged += new System.EventHandler(this.comboBoxLEDPattern_SelectedIndexChanged);
             // 
-            // backgroundWorkerRainbowWaves
+            // backgroundWorkerRainbowColor
             // 
-            this.backgroundWorkerRainbowWaves.WorkerSupportsCancellation = true;
-            this.backgroundWorkerRainbowWaves.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerRainbowWaves_DoWork);
+            this.backgroundWorkerRainbowColor.WorkerSupportsCancellation = true;
+            this.backgroundWorkerRainbowColor.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerRainbowWaves_DoWork);
             // 
             // backgroundWorkerRandomKey
             // 
@@ -586,10 +586,10 @@ namespace Vulcan_Project
             this.backgroundWorkerRandomcolor.WorkerSupportsCancellation = true;
             this.backgroundWorkerRandomcolor.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerRandomcolor_DoWork);
             // 
-            // backgroundWorkerMatrix
+            // backgroundWorkerRainbowWave
             // 
-            this.backgroundWorkerMatrix.WorkerSupportsCancellation = true;
-            this.backgroundWorkerMatrix.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerMatrix_DoWork);
+            this.backgroundWorkerRainbowWave.WorkerSupportsCancellation = true;
+            this.backgroundWorkerRainbowWave.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerMatrix_DoWork);
             // 
             // Form1
             // 
@@ -654,7 +654,7 @@ namespace Vulcan_Project
         private System.Windows.Forms.Panel panelRainbowWaves;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TrackBar trackBarSpeed;
-        private System.ComponentModel.BackgroundWorker backgroundWorkerRainbowWaves;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerRainbowColor;
         private System.Windows.Forms.Panel panelRandom;
         private System.Windows.Forms.Label labelSpeedR;
         private System.Windows.Forms.TrackBar trackBar1;
@@ -681,7 +681,7 @@ namespace Vulcan_Project
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TrackBar trackBarColorRED;
         private System.Windows.Forms.Label label3;
-        private System.ComponentModel.BackgroundWorker backgroundWorkerMatrix;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerRainbowWave;
     }
 }
 

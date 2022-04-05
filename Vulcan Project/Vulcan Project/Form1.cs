@@ -35,23 +35,23 @@ namespace Vulcan_Project
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
+            stop = true;
+            
 
-            if (backgroundWorkerRainbowWaves.IsBusy == true)
-            {
-                stop = true;
-                Thread.Sleep(203);
-                backgroundWorkerRainbowWaves.CancelAsync();
-
-                stop = false;
-            }
+            
             if (kb != null)
             {
+                Thread.Sleep(203);
                 kb.SetColor(255, 0, 0);
                 kb.Update();
             }
+            
+
 
 
             this.Close();
+            
+            
         }
 
         private void buttonAddKB_Click(object sender, EventArgs e)
@@ -85,11 +85,11 @@ namespace Vulcan_Project
 
             if (comboBoxLEDPattern.SelectedIndex != 2)
             {
-                if (backgroundWorkerRainbowWaves.IsBusy == true)
+                if (backgroundWorkerRainbowColor.IsBusy == true)
                 {
                     stop = true;
                     Thread.Sleep(203);
-                    backgroundWorkerRainbowWaves.CancelAsync();
+                    backgroundWorkerRainbowColor.CancelAsync();
 
                     stop = false;
                 }
@@ -97,11 +97,11 @@ namespace Vulcan_Project
 
             if (comboBoxLEDPattern.SelectedIndex != 5)
             {
-                if (backgroundWorkerMatrix.IsBusy == true)
+                if (backgroundWorkerRainbowWave.IsBusy == true)
                 {
                     stop = true;
                     Thread.Sleep(203);
-                    backgroundWorkerMatrix.CancelAsync();
+                    backgroundWorkerRainbowWave.CancelAsync();
 
                     stop = false;
                 }
@@ -144,13 +144,13 @@ namespace Vulcan_Project
                     panelRainbowWaves.Enabled = true;
 
                     Thread.Sleep(20);
-                    if (backgroundWorkerRainbowWaves.IsBusy == false)
+                    if (backgroundWorkerRainbowColor.IsBusy == false)
                     {
-                        backgroundWorkerRainbowWaves.RunWorkerAsync();
+                        backgroundWorkerRainbowColor.RunWorkerAsync();
                     }
                     break;
 
-                case 1:
+                case 5:
 
                     break;
 
@@ -175,12 +175,12 @@ namespace Vulcan_Project
                     }
                     break;
 
-                case 5:
+                case 1:
 
                     Thread.Sleep(20);
-                    if (backgroundWorkerMatrix.IsBusy == false)
+                    if (backgroundWorkerRainbowWave.IsBusy == false)
                     {
-                        backgroundWorkerMatrix.RunWorkerAsync();
+                        backgroundWorkerRainbowWave.RunWorkerAsync();
                     }
 
                     break;
@@ -220,6 +220,7 @@ namespace Vulcan_Project
 
         private void backgroundWorkerRainbowWaves_DoWork(object sender, DoWorkEventArgs e)
         {
+            if(Red == 0 && Blue == 0 && Green == 0) { Red = 254; }
             if (Red < Green && Red < Blue) { Red = 0; }
             if (Blue < Red && Blue < Green) { Blue = 0; }
             if (Green < Red && Green < Blue) { Green = 0; }
@@ -473,15 +474,62 @@ namespace Vulcan_Project
 
         private void backgroundWorkerMatrix_DoWork(object sender, DoWorkEventArgs e)
         {
+            var AK = kb.Keys;
+            Red = 255;
+            Green = 0;
+            Blue = 0;
+            int ite = 0;
+            int loop = 0;
 
-            
+            while (stop != true)
+            {
+                if (loop == 0) { Red = 254 - ite; Green = 0 + ite; }
+                if (loop == 1) { Green = 254 - ite; Blue = 0 + ite; }
+                if (loop == 2) { Blue = 254 - ite; Red = 0 + ite; }
+
+                for (int j = 0; j < AK.Count(); j++)
+                {
+                    kb.SetKeyColor(AK.ElementAt(j), (byte)Red, (byte)Green, (byte)Blue);
+                    if (Red > 0 && Green < 254 && Blue == 0)
+                    {
+                        Red -= 2;
+                        Green += 2;
+                    }
+
+                    if (Green > 0 && Blue < 254 && Red == 0)
+                    {
+                        Green -= 2;
+                        Blue += 2;
+                    }
+
+                    if (Blue > 0 && Red < 254 && Green == 0)
+                    {
+                        Blue -= 2;
+                        Red += 2;
+                    }
 
 
-                
-            
+                }
+
+                kb.Update();
+                ite += 1;
+                Thread.Sleep(0);
+                if (ite == 254) { loop += 1; ite = 0; }
+                if (loop > 2) loop = 0;
+                Red = 0; Blue = 0; Green = 0;
 
 
-        
+            }
+
+
+
+
+
+
+
+
+
+
         }
     }
 }
